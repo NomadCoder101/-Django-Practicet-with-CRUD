@@ -1,0 +1,13 @@
+<h2>{{listing.title}}</h2>
+
+<!---->
+{% if listing.image %}
+<img src="{{ listing.image.url }}" alt="{{ listing.title }}" />
+{% endif %}
+<h3>${{listing.price}}</h3>
+<p>{{listing.address}}</p>
+
+<div style="display: flex; width: 250px; justify-content: space-between">
+  <a href="{% url 'update_listing' listing.id %} "><h5>Update Listing</h5></a>
+  <a href=" {% url 'deletelisting' listing.id   %} "><h5>Delete Listing</h5></a>
+</div>

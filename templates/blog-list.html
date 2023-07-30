@@ -1,0 +1,12 @@
+<a href=" {% url 'addblog' %} "><h5>Add Blog</h5></a>
+<p>Check our blog</p>
+<a href=" {% url 'listing' %} "><h5>Our Listings</h5></a>
+{% for blog in blog_list %}
+
+<div>
+  <a href="{% url 'blogdetail' blog.id %}">{{blog.title}}</a>
+  {% if blog.image %}
+  <img src="{{ blog.image.url }}" alt="{{ blog.title }}" />
+  {% endif %}
+</div>
+{%endfor%}

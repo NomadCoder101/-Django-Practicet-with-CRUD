@@ -1,0 +1,14 @@
+<a href=" {% url 'addlisting' %} "><h5>Add Listing</h5></a>
+<p>Check our blog</p>
+<a href=" {% url 'blogList' %} "><h5>Blog</h5></a>
+{% for listing in listings %}
+
+<!---->
+{% if listing.image %}
+<img src="{{ listing.image.url }}" alt="{{ listing.title }}" />
+{% endif %}
+<a href="{% url 'single' listing.id %}"><h2>{{ listing.title}}</h2></a>
+
+<!---->
+
+{% endfor %}

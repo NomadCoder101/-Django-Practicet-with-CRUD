@@ -1,0 +1,11 @@
+{% if blog_detail.image %}
+<img src="{{ blog_detail.image.url }}" alt="{{ blog_detail.title }}" />
+{% endif %}
+<h2>{{blog_detail.title}}</h2>
+
+<p>{{blog_detail.body}}</p>
+
+<div style="display: flex; width: 250px; justify-content: space-between">
+  <a href="{% url 'updateblog' blog_detail.id %} "><h5>Update Listing</h5></a>
+  <a href="{% url 'deleteblog' blog_detail.id %} "><h5>Delete Listing</h5></a>
+</div>
